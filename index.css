@@ -1,0 +1,15 @@
+:root {
+    --text-color: black;
+}
+
+.hide{
+    display: none;
+}
+.text{
+    color: var(--text-color);
+    text-decoration: none;
+}
+.font-family {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24pt;
+}
