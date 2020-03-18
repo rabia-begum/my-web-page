@@ -15,4 +15,12 @@ window.addEventListener('DOMContentLoaded', function(event){
         detail.classList.remove('hide');
         document.body.classList.add('font-family');
     })
+    var doesItLink = document.getElementById('does-it-link');
+    doesItLink.addEventListener('click', function(linkEvent){
+        linkEvent.preventDefault();
+        this.classList.add('text');
+        var pictureText = document.querySelector('.picture-text');
+        pictureText.classList.remove('hide');
+        document.body.classList.add('layout');
+    })
 })
