@@ -23,4 +23,17 @@ window.addEventListener('DOMContentLoaded', function(event){
         pictureText.classList.remove('hide');
         document.body.classList.add('layout');
     })
+    var picturesLink = document.getElementById('pictures-link');
+    picturesLink.addEventListener('click', function(linkEvent){
+        linkEvent.preventDefault();
+        this.classList.add('text');
+        var touchText = document.querySelector('.touch-text');
+        touchText.classList.remove('hide');
+        document.body.classList.add('flexy');
+        
+
+
+
+        
+    })
 })
