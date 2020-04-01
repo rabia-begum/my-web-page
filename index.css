@@ -4,6 +4,15 @@
     --mine-shaft: #333333;
 }
 
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+
 .hide{
     display: none;
 }
@@ -77,10 +86,37 @@
     display: block;
 }
 
-.images img{
+.images {
+    width: 400px;
+    height: 500px;
+    margin-left: 50px;
+}
+
+.images img {
+    width: 100%;
+    height: auto;
+}
+
+.images img, .carousel .images {
     border-color: #A1E6E3;
     border-width: 10px;
     border-style: solid;
-    margin-block-start: 20px;
+    margin-bottom: 20px;
+}
 
+.carousel .delete-target{
+    display: none;
+}
+
+.carousel .images {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 70px 70px 0 #FAFBA4;
+}
+
+.carousel .images img{
+    border: none;
+    position: absolute;
+    margin: 0; 
+    
 }

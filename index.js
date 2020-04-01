@@ -29,11 +29,13 @@ window.addEventListener('DOMContentLoaded', function(event){
         this.classList.add('text');
         var touchText = document.querySelector('.touch-text');
         touchText.classList.remove('hide');
-        document.body.classList.add('flexy');
-        
-
-
-
-        
+        document.body.classList.add('flexy');  
     })
+    var touchLink = document.getElementById('touch-link');
+    touchLink.addEventListener('click', function(linkEvent){
+        linkEvent.preventDefault();
+        document.body.classList.add('carousel');
+        
+        
+    } )
 })
