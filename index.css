@@ -32,6 +32,7 @@
     position: relative;
     color: var(--mine-shaft);
     /* overflow: hidden; */
+    overflow-x: hidden;
 }
 
 .layout::before {
@@ -80,6 +81,7 @@
 
 .image-column {
     display: none;
+    position: relative;
 }
 
 .flexy .image-column {
@@ -88,12 +90,12 @@
 
 .images {
     width: 400px;
-    height: 500px;
+    /* height: 500px; */
     margin-left: 50px;
 }
 
 .images img {
-    width: 100%;
+    width: 400px;
     height: auto;
 }
 
@@ -109,14 +111,36 @@
 }
 
 .carousel .images {
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
     box-shadow: 70px 70px 0 #FAFBA4;
 }
 
+.carousel .carousel-container {
+    transition: margin .5s ease-out;
+}
+
 .carousel .images img{
     border: none;
-    position: absolute;
+    float:left;
     margin: 0; 
     
+}
+
+.arrow {
+    display: none;
+}
+
+.carousel .arrow {
+    display: inline;
+}
+
+.carousel .arrow.prev {
+    position: absolute;
+    top: 50%; left: -25px;
+}
+
+.carousel .arrow.next {
+    position: absolute;
+    top: 50%; right: -74px;
 }

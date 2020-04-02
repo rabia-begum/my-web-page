@@ -1,3 +1,30 @@
+function initCarousel(width){
+    var current = 0;
+
+    var carouselContainer = document.querySelector('.carousel-container');
+    var images = carouselContainer.querySelectorAll('img[data-image]');
+    var imagesContainer = document.querySelector('.images');
+    carouselContainer.style.width = (images.length * width) + 'px';
+    imagesContainer.style.width = width;
+
+    var prevLink = document.querySelector('.arrow.prev');
+    var nextLink = document.querySelector('.arrow.next');
+
+    prevLink.addEventListener('click', function(e){
+        e.preventDefault();
+        current--;
+        current = current < 0 ? 0 : current;
+        carouselContainer.style.marginLeft = (-current * width) + 'px';
+    }); 
+    
+    nextLink.addEventListener('click', function(e){
+        e.preventDefault();
+        current++;
+        current = current >= images.length ? 0 : current;
+        carouselContainer.style.marginLeft = (-current * width) + 'px';
+    });
+};
+
 window.addEventListener('DOMContentLoaded', function(event){
     console.log(event.type, event);
     var helloLink = document.getElementById('hello-link');
@@ -35,7 +62,13 @@ window.addEventListener('DOMContentLoaded', function(event){
     touchLink.addEventListener('click', function(linkEvent){
         linkEvent.preventDefault();
         document.body.classList.add('carousel');
-        
-        
-    } )
+        initCarousel(400);
+    });
+
+    helloLink.click();
+    progressLink.click();
+    doesItLink.click();
+    picturesLink.click();
+    touchLink.click();
+
 })
