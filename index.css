@@ -31,7 +31,12 @@
 .layout {
     position: relative;
     color: var(--mine-shaft);
-    /* overflow: hidden; */
+    overflow: hidden;
+    
+}
+
+.flexy {
+    overflow-y: auto; 
     overflow-x: hidden;
 }
 
@@ -64,12 +69,12 @@
 .layout .text {
     color: var(--mine-shaft);
 }
-.layout .detail ul a {
+.layout .detail ul a, .inspired-info a{
     color: var(--emperor);
     font-weight: bold;
 }
 
-.layout .detail ul a:hover {
+.layout .detail ul a:hover, .inspire-info a:hover {
     color: var(--text-color);
 }
 
@@ -143,4 +148,12 @@
 .carousel .arrow.next {
     position: absolute;
     top: 50%; right: -74px;
+}
+
+.inspired-info {
+    font-size: 14pt;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
 }
