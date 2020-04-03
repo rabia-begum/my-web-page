@@ -63,12 +63,21 @@ window.addEventListener('DOMContentLoaded', function(event){
         linkEvent.preventDefault();
         document.body.classList.add('carousel');
         initCarousel(400);
+        localStorage.setItem('touched', 'yes');
     });
 
-    helloLink.click();
-    progressLink.click();
-    doesItLink.click();
-    picturesLink.click();
-    touchLink.click();
-
-})
+    var touched = localStorage.getItem('touched');
+    if(touched === 'yes'){
+        helloLink.click();
+        progressLink.click();
+        doesItLink.click();
+        picturesLink.click();
+        touchLink.click();
+    }  
+    
+    var startOverLink = document.getElementById('start-over-link');
+    startOverLink.addEventListener('click', function(linkEvent){
+        localStorage.removeItem('touched');
+        window.location.reload();
+    });
+});
