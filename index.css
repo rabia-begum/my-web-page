@@ -2,6 +2,8 @@
     --text-color: black;
     --emperor: #555555;
     --mine-shaft: #333333;
+    --monte-carlo: #75cac6;
+    --touch-hover: white;
 }
 
 .clearfix:after {
@@ -160,4 +162,14 @@
     left: 0;
     bottom: 0;
     padding: 20px;
+}
+
+#touch-link {
+    color: var(--monte-carlo);
+    padding: 3px;
+}
+
+#touch-link:hover {
+    color: var(--touch-hover);
+    background-color: var(--monte-carlo);
 }
