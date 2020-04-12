@@ -70,6 +70,12 @@
     color: var(--text-color);
 }
 
+.layout .flex-item .bio,
+.layout .flex-item .detail,
+.flexy .picture-text {
+    opacity: .6;
+}
+
 .flexy .flex-container {
     display: flex;
     justify-content: space-between;
@@ -105,6 +111,12 @@
 
 .carousel .delete-target{
     display: none;
+}
+
+.carousel .flex-item .bio,
+.carousel .flex-item .detail,
+.carousel .picture-text {
+    opacity: 1;
 }
 
 .carousel .images {
