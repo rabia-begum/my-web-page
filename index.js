@@ -1,5 +1,7 @@
 function initCarousel(width){
     var current = 0;
+    var playIntervalID;
+    var isPaused = false;
 
     var carouselContainer = document.querySelector('.carousel-container');
     var images = carouselContainer.querySelectorAll('img[data-image]');
@@ -9,6 +11,7 @@ function initCarousel(width){
 
     var prevLink = document.querySelector('.arrow.prev');
     var nextLink = document.querySelector('.arrow.next');
+    var state = document.querySelector('.state');
 
     prevLink.addEventListener('click', function(e){
         e.preventDefault();
@@ -23,6 +26,29 @@ function initCarousel(width){
         current = current >= images.length ? 0 : current;
         carouselContainer.style.marginLeft = (-current * width) + 'px';
     });
+
+    state.addEventListener('click', function(e){
+        e.preventDefault();
+        if(isPaused){
+            this.classList.remove('paused');
+            isPaused = false;
+            initPlay();
+        }else {
+            this.classList.add('paused');
+            window.clearInterval(playIntervalID);
+            isPaused = true;
+        }
+       
+    });
+
+    function initPlay(){
+        playIntervalID = window.setInterval(function(){
+            nextLink.click();
+        }, 1000 * 3);
+    }
+
+    initPlay();
+
 };
 
 window.addEventListener('DOMContentLoaded', function(event){

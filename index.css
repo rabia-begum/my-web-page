@@ -6,6 +6,10 @@
     --touch-hover: white;
 }
 
+body {
+    margin-bottom: 80px;
+}
+
 .clearfix:after {
     visibility: hidden;
     display: block;
@@ -138,11 +142,11 @@
     
 }
 
-.arrow {
+.arrow, .state {
     display: none;
 }
 
-.carousel .arrow {
+.carousel .arrow, .carousel .state{
     display: inline;
 }
 
@@ -154,6 +158,20 @@
 .carousel .arrow.next {
     position: absolute;
     top: 50%; right: -74px;
+}
+
+.carousel .state {
+    position: absolute;
+    left: 60px;
+    top: 98%;
+    background: url(/assets/pause-icon.png) no-repeat center center;
+    width: 48px;
+    height: 48px;
+    background-size: 48px;
+}
+
+.carousel .state.paused {
+    background-image: url(/assets/play-icon.png);
 }
 
 .inspired-info {
