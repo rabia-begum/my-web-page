@@ -15,16 +15,14 @@ function initCarousel(width){
 
     prevLink.addEventListener('click', function(e){
         e.preventDefault();
-        current--;
-        current = current < 0 ? 0 : current;
-        carouselContainer.style.marginLeft = (-current * width) + 'px';
+        pause();
+        prev();
     }); 
     
     nextLink.addEventListener('click', function(e){
         e.preventDefault();
-        current++;
-        current = current >= images.length ? 0 : current;
-        carouselContainer.style.marginLeft = (-current * width) + 'px';
+        pause();
+        next();
     });
 
     state.addEventListener('click', function(e){
@@ -32,22 +30,51 @@ function initCarousel(width){
         if(isPaused){
             this.classList.remove('paused');
             isPaused = false;
-            initPlay();
+            play();
         }else {
             this.classList.add('paused');
-            window.clearInterval(playIntervalID);
+            pause();
             isPaused = true;
         }
        
     });
 
-    function initPlay(){
+    document.body.addEventListener('keydown', function(e){
+        pause();
+        if(e.code === 'ArrowRight'){
+            next();
+        }else if (e.code === 'ArrowLeft'){
+            prev();
+        }
+
+    });
+
+    function next(){
+        current++;
+        current = current >= images.length ? 0 : current;
+        carouselContainer.style.marginLeft = (-current * width) + 'px';
+    }
+
+    function prev(){
+        current--;
+        current = current < 0 ? 0 : current;
+        carouselContainer.style.marginLeft = (-current * width) + 'px';
+    }
+
+    function play(){
         playIntervalID = window.setInterval(function(){
-            nextLink.click();
+            next();
         }, 1000 * 3);
     }
 
-    initPlay();
+    function pause(){
+        window.clearInterval(playIntervalID);
+        state.classList.add('paused');
+        isPaused = true;
+    }
+
+    play();
+
 
 };
 
