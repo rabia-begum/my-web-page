@@ -191,3 +191,45 @@ body {
     color: var(--touch-hover);
     background-color: var(--monte-carlo);
 }
+
+@media screen and (max-width:480px){
+    .intro h1{
+        text-align: center;
+    }
+
+    .flexy .flex-container{
+        display: block;
+        width: 100%;
+    }
+    .flex-item{
+        font-size: 30pt;
+    }
+
+    .carousel .images {
+        margin: 0 auto;
+    }
+    .carousel .arrow{
+        width: 110px;
+        height: 97px;
+    }
+    .carousel .arrow img{
+        width: 100%;
+    }
+    .carousel .arrow.next {
+        top: 50%;
+        right: 50px;
+    }
+    .carousel .arrow.prev {
+        top: 50%;
+        left: 50px;
+    }
+
+    .carousel .state{
+        left: 270px;
+        top: 102%;
+        width: 60px;
+        height: 60px;
+        background-size: 65px;
+    }
+
+}
